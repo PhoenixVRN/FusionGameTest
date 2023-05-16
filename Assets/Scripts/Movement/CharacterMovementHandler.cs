@@ -23,6 +23,10 @@ public class CharacterMovementHandler : NetworkBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        if (!Object.HasInputAuthority)
+        {
+            localCamera.gameObject.SetActive(false);
+        }
     }
 
     private void Update()

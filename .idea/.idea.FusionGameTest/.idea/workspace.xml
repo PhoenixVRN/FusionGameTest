@@ -14,7 +14,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/767dc6875cb84f4b81a18521098a47b68f800/1b/efa3d21c/NetworkInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e8a406da998549af9a2680936c7da25a159c00/59/50b04ebb/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/767dc6875cb84f4b81a18521098a47b68f800/5e/c2553bcd/NetworkRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/941a4719b50f41b29409612f3478c8db1a000/89/8cb3feb8/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2PrbtWft3YaPtUNCTw7lMBV5tBD" />
@@ -66,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684218366291</updated>
-      <workItem from="1684218374042" duration="4165000" />
+      <workItem from="1684218374042" duration="15266000" />
     </task>
     <servers />
   </component>
