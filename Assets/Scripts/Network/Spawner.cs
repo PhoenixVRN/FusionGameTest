@@ -1,19 +1,13 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using UnityEngine;
 using Fusion;
 using Fusion.Sockets;
-using System;
-using UnityEngine.Diagnostics;
+using UnityEngine;
 
 public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
 {
     public NetworkPlayer playerPrefab;
     private CharacterInputHandler characterInputHandler;
-    void Start()
-    {
-        
-    }
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
