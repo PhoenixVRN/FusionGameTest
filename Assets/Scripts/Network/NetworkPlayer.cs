@@ -1,26 +1,27 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Fusion;
 using UnityEngine;
 
-public class NetworkPlayer : NetworkBehaviour
+public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
 {
     public static NetworkPlayer Local;
 
-    private void Awake()
+    public override void Spawned()
     {
-        Local = this;
+        if (Object.HasInputAuthority)
+        {
+            Local = this;
+            Debug.Log("Spawned local player");
+        }
+        else
+        {
+            Debug.Log("Spawned remote player");
+        }
     }
-
-    void Start()
+    public void PlayerLeft(PlayerRef player)
     {
-      
-    }
-
-   
-    void Update()
-    {
-        
+        if (player == Object.InputAuthority)
+        {
+            Runner.Despawn(Object);
+        }
     }
 }
