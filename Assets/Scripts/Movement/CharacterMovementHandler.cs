@@ -23,10 +23,6 @@ public class CharacterMovementHandler : NetworkBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        if (!Object.HasInputAuthority)
-        {
-            localCamera.gameObject.SetActive(false);
-        }
     }
 
     private void Update()
@@ -41,7 +37,7 @@ public class CharacterMovementHandler : NetworkBehaviour
     {
         if (GetInput(out NetworkInputData networkInputData))
         {
-            networkCharacterControllerPrototypeCustom.Rotate(networkInputData.rotationInput);
+            transform.forward = networkInputData.aimForwardVector;
             
             Vector3 moveDirection = transform.forward * networkInputData.mowementInput.y +
                                     transform.right * networkInputData.mowementInput.x;
@@ -53,6 +49,16 @@ public class CharacterMovementHandler : NetworkBehaviour
             {
                 networkCharacterControllerPrototypeCustom.Jump();
             }
+            
+            CheckFalllRespawn();
+        }
+    }
+
+    private void CheckFalllRespawn()
+    {
+        if (transform.position.y < -12)
+        {
+            transform.position = Utils.GetRandomSpaenPoint();
         }
     }
 
