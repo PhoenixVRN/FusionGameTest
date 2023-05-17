@@ -21,9 +21,11 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
             localCamera.enabled = false;
 
             AudioListener audioListener = GetComponentInChildren<AudioListener>();
-            audioListener.enabled = false;
+            // audioListener.enabled = false;
             Debug.Log("Spawned remote player");
         }
+
+        transform.name = $"P_{Object.Id}";
     }
     public void PlayerLeft(PlayerRef player)
     {
