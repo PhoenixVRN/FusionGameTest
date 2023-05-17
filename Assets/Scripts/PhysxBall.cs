@@ -15,5 +15,13 @@ public class PhysxBall :NetworkBehaviour
     {
         if(life.Expired(Runner))
             Runner.Despawn(Object);
+        CheckFalllBall();
+    }
+    private void CheckFalllBall()
+    {
+        if (transform.position.y < -12)
+        {
+            transform.position = Utils.GetRandomSpaenPoint();
+        }
     }
 }
