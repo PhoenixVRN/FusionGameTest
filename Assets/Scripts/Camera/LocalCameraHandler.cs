@@ -30,20 +30,20 @@ public class LocalCameraHandler : MonoBehaviour
     }
 
     
-    void LateUpdate()
+    void Update()
     {
         if (cameraAnchorPoint == null) return;
         
         if (!localCamera.enabled) return;
 
-        localCamera.transform.position = cameraAnchorPoint.position;
+        localCamera.transform.position = cameraAnchorPoint.position + new Vector3(0,3,-1);
         
-        cameraRotationX += viewInput.y * Time.deltaTime * _networkCharacterControllerPrototypeCustom.viewUpDownRotationSpeed;
-        cameraRotationX = Mathf.Clamp(cameraRotationX, -90, 90);
-        
-        cameraRotationY += viewInput.x * Time.deltaTime * _networkCharacterControllerPrototypeCustom.rotationSpeed;
-
-        localCamera.transform.localRotation = Quaternion.Euler(cameraRotationX,cameraRotationY,0);
+        // cameraRotationX += viewInput.y * Time.deltaTime * _networkCharacterControllerPrototypeCustom.viewUpDownRotationSpeed;
+        // cameraRotationX = Mathf.Clamp(cameraRotationX, -90, 90);
+        //
+        // cameraRotationY += viewInput.x * Time.deltaTime * _networkCharacterControllerPrototypeCustom.rotationSpeed;
+        //
+        // localCamera.transform.localRotation = Quaternion.Euler(cameraRotationX,cameraRotationY,0);
     }
 
     public void SetViewInputVector(Vector2 viewInput)

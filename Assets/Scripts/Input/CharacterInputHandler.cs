@@ -30,7 +30,7 @@ public class CharacterInputHandler : MonoBehaviour
             isJumpButtonPressed = true;
         }
         
-        _localCameraHandler.SetViewInputVector(viewInputVector);
+        // _localCameraHandler.SetViewInputVector(viewInputVector);
     }
 
     public NetworkInputData GetNetworkInput()
@@ -39,7 +39,7 @@ public class CharacterInputHandler : MonoBehaviour
 
         networkInputData.isJumpPressed = isJumpButtonPressed;
 
-        networkInputData.aimForwardVector = _localCameraHandler.transform.forward;
+        // networkInputData.aimForwardVector = _localCameraHandler.transform.forward;
         
         networkInputData.mowementInput = moveInputVector;
 

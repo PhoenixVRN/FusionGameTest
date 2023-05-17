@@ -18,19 +18,19 @@ public class CharacterMovementHandler : NetworkBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.visible = false;
     }
 
     public override void FixedUpdateNetwork()
     {
         if (GetInput(out NetworkInputData networkInputData))
         {
-            transform.forward = networkInputData.aimForwardVector;
+            // transform.forward = networkInputData.aimForwardVector;
 
-            Quaternion rotation = transform.rotation;
-            rotation.eulerAngles = new Vector3(0, rotation.eulerAngles.y, rotation.eulerAngles.z);
-            transform.rotation = rotation;
+            // Quaternion rotation = transform.rotation;
+            // rotation.eulerAngles = new Vector3(0, rotation.eulerAngles.y, rotation.eulerAngles.z);
+            // transform.rotation = rotation;
             
             Vector3 moveDirection = transform.forward * networkInputData.mowementInput.y +
                                     transform.right * networkInputData.mowementInput.x;
