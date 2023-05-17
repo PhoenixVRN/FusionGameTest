@@ -7,6 +7,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
 {
     public NetworkPlayer playerPrefab;
+    public PhysxBall Ball;
     private CharacterInputHandler characterInputHandler;
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
@@ -16,6 +17,8 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
         {
             Debug.Log("OnPlayerJoined we are serwer. Spawwning player");
             runner.Spawn(playerPrefab, Utils.GetRandomSpaenPoint(),Quaternion.identity, player);
+            runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
+            
         }
     }
 
