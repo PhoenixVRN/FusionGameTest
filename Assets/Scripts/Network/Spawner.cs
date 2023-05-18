@@ -18,6 +18,11 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
             Debug.Log("OnPlayerJoined we are serwer. Spawwning player");
             runner.Spawn(playerPrefab, Utils.GetRandomSpaenPoint(),Quaternion.identity, player);
             runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
+            runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
+            runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
+            runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
+            runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
+            runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
             
         }
     }
