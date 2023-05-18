@@ -650,8 +650,8 @@ MonoBehaviour:
   TargetInterpolationDelay: 0.03
   gravity: -20
   jumpImpulse: 4
-  acceleration: 20
-  braking: 10
+  acceleration: 10
+  braking: 5
   maxSpeed: 2
   rotationSpeed: 300
   viewUpDownRotationSpeed: 120
