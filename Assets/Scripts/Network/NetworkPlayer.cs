@@ -4,7 +4,7 @@ using UnityEngine;
 public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
 {
     public static NetworkPlayer Local;
-    public Transform playerModel;
+    public Transform PlayerModel;
 
     public override void Spawned()
     {

@@ -537,6 +537,8 @@ GameObject:
   - component: {fileID: 8198086432773716771}
   - component: {fileID: 1590170349936389912}
   - component: {fileID: 5484998903304040512}
+  - component: {fileID: 1832531374250439042}
+  - component: {fileID: 341369802364678892}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -619,6 +621,7 @@ MonoBehaviour:
   - {fileID: 1185834269114307468}
   - {fileID: 8198086432773716771}
   - {fileID: 1590170349936389912}
+  - {fileID: 1832531374250439042}
   SimulationBehaviours: []
 --- !u!114 &8198086432773716771
 MonoBehaviour:
@@ -646,13 +649,13 @@ MonoBehaviour:
     RotBlendStart: 0.1
     RotBlendEnd: 0.5
     RotTeleportRadians: 1.5
-  UseLegacySharedModeInterpolation: 1
+  UseLegacySharedModeInterpolation: 0
   TargetInterpolationDelay: 0.03
   gravity: -20
   jumpImpulse: 4
   acceleration: 10
   braking: 5
-  maxSpeed: 2
+  maxSpeed: 1
   rotationSpeed: 300
   viewUpDownRotationSpeed: 120
   _IsGrounded: 0
@@ -682,6 +685,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9bd3b4f829b19042b61f53813887566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1832531374250439042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407690256589173054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1039544458, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  Config: 1
+  BroadRadius: 0.5
+  Offset: {x: 0, y: 0, z: 0}
+  GizmosColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  Hitboxes:
+  - {fileID: 341369802364678892}
+--- !u!114 &341369802364678892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407690256589173054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1014831617, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 2
+  SphereRadius: 0.5
+  BoxExtents: {x: 0, y: 0, z: 0}
+  Offset: {x: 0, y: 0, z: 0}
+  Root: {fileID: 1832531374250439042}
+  GizmosColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &6407690256934264083
 GameObject:
   m_ObjectHideFlags: 0

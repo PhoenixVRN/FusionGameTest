@@ -1,19 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Fusion;
 using UnityEngine;
 
 public class CharacterMovementHandler : NetworkBehaviour
 {
 
-    private NetworkCharacterControllerPrototypeCustom networkCharacterControllerPrototypeCustom;
-    private Camera localCamera;
+    private NetworkCharacterControllerPrototypeCustom _networkCharacterControllerPrototypeCustom;
+    private Camera _localCamera;
 
     private void Awake()
     {
-        networkCharacterControllerPrototypeCustom = GetComponent<NetworkCharacterControllerPrototypeCustom>();
-        localCamera = GetComponentInChildren<Camera>();
+        _networkCharacterControllerPrototypeCustom = GetComponent<NetworkCharacterControllerPrototypeCustom>();
+        _localCamera = GetComponentInChildren<Camera>();
     }
 
     private void Start()
@@ -32,15 +29,15 @@ public class CharacterMovementHandler : NetworkBehaviour
             // rotation.eulerAngles = new Vector3(0, rotation.eulerAngles.y, rotation.eulerAngles.z);
             // transform.rotation = rotation;
             
-            Vector3 moveDirection = transform.forward * networkInputData.mowementInput.y +
-                                    transform.right * networkInputData.mowementInput.x;
+            Vector3 moveDirection = transform.forward * networkInputData.MowementInput.y +
+                                    transform.right * networkInputData.MowementInput.x;
             moveDirection.Normalize();
             
-            networkCharacterControllerPrototypeCustom.Move(moveDirection);
+            _networkCharacterControllerPrototypeCustom.Move(moveDirection);
 
-            if (networkInputData.isJumpPressed)
+            if (networkInputData.IsJumpPressed)
             {
-                networkCharacterControllerPrototypeCustom.Jump();
+                _networkCharacterControllerPrototypeCustom.Jump();
             }
             
             CheckFalllRespawn();

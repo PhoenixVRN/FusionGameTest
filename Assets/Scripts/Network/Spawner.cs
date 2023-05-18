@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
 {
-    public NetworkPlayer playerPrefab;
+    public NetworkPlayer PlayerPrefab;
     public PhysxBall Ball;
-    private CharacterInputHandler characterInputHandler;
+    private CharacterInputHandler _characterInputHandler;
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
@@ -16,7 +16,11 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
         if (runner.IsServer)
         {
             Debug.Log("OnPlayerJoined we are serwer. Spawwning player");
-            runner.Spawn(playerPrefab, Utils.GetRandomSpaenPoint(),Quaternion.identity, player);
+            runner.Spawn(PlayerPrefab, Utils.GetRandomSpaenPoint(),Quaternion.identity, player);
+            runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
+            runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
+            runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
+            runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
             runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
             runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
             runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
@@ -34,14 +38,14 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
-        if (characterInputHandler == null && NetworkPlayer.Local != null)
+        if (_characterInputHandler == null && NetworkPlayer.Local != null)
         {
-            characterInputHandler = NetworkPlayer.Local.GetComponent<CharacterInputHandler>();
+            _characterInputHandler = NetworkPlayer.Local.GetComponent<CharacterInputHandler>();
         }
 
-        if (characterInputHandler != null)
+        if (_characterInputHandler != null)
         {
-            input.Set(characterInputHandler.GetNetworkInput());
+            input.Set(_characterInputHandler.GetNetworkInput());
         }
         
     }

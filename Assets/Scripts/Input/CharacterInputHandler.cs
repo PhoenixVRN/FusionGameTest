@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class CharacterInputHandler : MonoBehaviour
 {
-    Vector2 moveInputVector = Vector2.zero;
-    Vector2 viewInputVector = Vector2.zero;
-    private bool isJumpButtonPressed;
-
+    private Vector2 _moveInputVector = Vector2.zero;
+    private Vector2 _viewInputVector = Vector2.zero;
+    private bool _isJumpButtonPressed;
 
     private LocalCameraHandler _localCameraHandler;
 
@@ -19,15 +18,15 @@ public class CharacterInputHandler : MonoBehaviour
 
     void Update()
     {
-        viewInputVector.x = Input.GetAxis("Mouse X");
-        viewInputVector.y = Input.GetAxis("Mouse Y") * -1;
+        _viewInputVector.x = Input.GetAxis("Mouse X");
+        _viewInputVector.y = Input.GetAxis("Mouse Y") * -1;
 
-        moveInputVector.x = Input.GetAxis("Horizontal");
-        moveInputVector.y = Input.GetAxis("Vertical");
+        _moveInputVector.x = Input.GetAxis("Horizontal");
+        _moveInputVector.y = Input.GetAxis("Vertical");
 
         if (Input.GetButtonDown("Jump"))
         {
-            isJumpButtonPressed = true;
+            _isJumpButtonPressed = true;
         }
         
         // _localCameraHandler.SetViewInputVector(viewInputVector);
@@ -37,13 +36,13 @@ public class CharacterInputHandler : MonoBehaviour
     {
         NetworkInputData networkInputData = new NetworkInputData();
 
-        networkInputData.isJumpPressed = isJumpButtonPressed;
+        networkInputData.IsJumpPressed = _isJumpButtonPressed;
 
         // networkInputData.aimForwardVector = _localCameraHandler.transform.forward;
         
-        networkInputData.mowementInput = moveInputVector;
+        networkInputData.MowementInput = _moveInputVector;
 
-        isJumpButtonPressed = false;
+        _isJumpButtonPressed = false;
         return networkInputData;
     }
 }

@@ -1,23 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using Fusion;
-using Fusion.Sockets;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-
-
+using Fusion;
+using Fusion.Sockets;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NetworkRunnerHandler : MonoBehaviour
 {
-    public NetworkRunner networkRunnerPrefab;
+    public NetworkRunner NetworkRunnerPrefab;
 
     private NetworkRunner _networkRunner;
     void Start()
     {
-        _networkRunner = Instantiate(networkRunnerPrefab);
+        _networkRunner = Instantiate(NetworkRunnerPrefab);
         _networkRunner.name = "Network runner";
         var clientTask = InitalizeNetworkRunner(_networkRunner, GameMode.AutoHostOrClient, NetAddress.Any(),SceneManager.GetActiveScene().buildIndex, null );
         Debug.Log($"Server NetworkRunner started.");

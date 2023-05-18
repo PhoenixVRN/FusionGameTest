@@ -3,7 +3,7 @@ using UnityEngine;
 
 public struct NetworkInputData : INetworkInput
 {
-   public Vector2 mowementInput;
-   public Vector3 aimForwardVector;
-   public NetworkBool isJumpPressed;
+   public Vector2 MowementInput;
+   public Vector3 AimForwardVector;
+   public NetworkBool IsJumpPressed;
 }

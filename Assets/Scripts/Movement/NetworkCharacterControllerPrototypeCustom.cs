@@ -1,4 +1,3 @@
-using System;
 using Fusion;
 using UnityEngine;
 
@@ -9,14 +8,14 @@ using UnityEngine;
 public class NetworkCharacterControllerPrototypeCustom : NetworkTransform
 {
     [Header("Character Controller Settings")]
-    public float gravity = -20.0f;
+    public float Gravity = -20.0f;
 
-    public float jumpImpulse = 8.0f;
-    public float acceleration = 10.0f;
-    public float braking = 10.0f;
-    public float maxSpeed = 2.0f;
-    public float rotationSpeed = 15.0f;
-    public float viewUpDownRotationSpeed = 50.0f;
+    public float JumpImpulse = 8.0f;
+    public float Acceleration = 10.0f;
+    public float Braking = 10.0f;
+    public float MaxSpeed = 2.0f;
+    public float RotationSpeed = 15.0f;
+    public float ViewUpDownRotationSpeed = 50.0f;
 
     [Networked] [HideInInspector] public bool IsGrounded { get; set; }
 
@@ -32,7 +31,7 @@ public class NetworkCharacterControllerPrototypeCustom : NetworkTransform
     /// Sets the default teleport interpolation angular velocity to be the CC's rotation speed on the Z axis.
     /// For more details on how this field is used, see <see cref="NetworkTransform.TeleportToRotation"/>.
     /// </summary>
-    protected override Vector3 DefaultTeleportInterpolationAngularVelocity => new Vector3(0f, 0f, rotationSpeed);
+    protected override Vector3 DefaultTeleportInterpolationAngularVelocity => new Vector3(0f, 0f, RotationSpeed);
 
     public CharacterController Controller { get; private set; }
 
@@ -74,14 +73,14 @@ public class NetworkCharacterControllerPrototypeCustom : NetworkTransform
     /// <summary>
     /// Basic implementation of a jump impulse (immediately integrates a vertical component to Velocity).
     /// <param name="ignoreGrounded">Jump even if not in a grounded state.</param>
-    /// <param name="overrideImpulse">Optional field to override the jump impulse. If null, <see cref="jumpImpulse"/> is used.</param>
+    /// <param name="overrideImpulse">Optional field to override the jump impulse. If null, <see cref="JumpImpulse"/> is used.</param>
     /// </summary>
     public virtual void Jump(bool ignoreGrounded = false, float? overrideImpulse = null)
     {
         if (IsGrounded || ignoreGrounded)
         {
             var newVel = Velocity;
-            newVel.y += overrideImpulse ?? jumpImpulse;
+            newVel.y += overrideImpulse ?? JumpImpulse;
             Velocity = newVel;
         }
     }
@@ -103,7 +102,7 @@ public class NetworkCharacterControllerPrototypeCustom : NetworkTransform
             moveVelocity.y = 0f;
         }
 
-        moveVelocity.y += gravity * Runner.DeltaTime;
+        moveVelocity.y += Gravity * Runner.DeltaTime;
 
         var horizontalVel = default(Vector3);
         horizontalVel.x = moveVelocity.x;
@@ -111,11 +110,11 @@ public class NetworkCharacterControllerPrototypeCustom : NetworkTransform
 
         if (direction == default)
         {
-            horizontalVel = Vector3.Lerp(horizontalVel, default, braking * deltaTime);
+            horizontalVel = Vector3.Lerp(horizontalVel, default, Braking * deltaTime);
         }
         else
         {
-            horizontalVel = Vector3.ClampMagnitude(horizontalVel + direction * acceleration * deltaTime, maxSpeed);
+            horizontalVel = Vector3.ClampMagnitude(horizontalVel + direction * Acceleration * deltaTime, MaxSpeed);
 
             // transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Runner.DeltaTime);
         }
@@ -131,6 +130,6 @@ public class NetworkCharacterControllerPrototypeCustom : NetworkTransform
 
     public void Rotate(float rotationY)
     {
-        transform.Rotate(0, rotationY * Runner.DeltaTime * rotationSpeed, 0);
+        transform.Rotate(0, rotationY * Runner.DeltaTime * RotationSpeed, 0);
     }
 }
