@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Fusion;
 using UnityEngine;
 
@@ -36,6 +33,7 @@ public class CharacterMovementHandler : NetworkBehaviour
                                     transform.right * networkInputData.mowementInput.x;
             moveDirection.Normalize();
             
+            Debug.Log(moveDirection);
             networkCharacterControllerPrototypeCustom.Move(moveDirection);
 
             if (networkInputData.isJumpPressed)
