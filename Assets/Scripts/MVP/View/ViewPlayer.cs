@@ -2,24 +2,22 @@ using UnityEngine;
 
 public class ViewPlayer : MonoBehaviour
 {
-  
-    [HideInInspector] public CharacterController CharacterController;
-    [HideInInspector] public Vector3 Move;
+    private Rigidbody _rb;
 
     [HideInInspector] public PlayerController _playerController;
     void Start()
     {
-        CharacterController = GetComponent<CharacterController>();
+        _rb = GetComponent<Rigidbody>();
     }
     
     void Update()
     {
-        Move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        _playerController.MoveHandler(Move);
+        _playerController.MoveHandler();
     }
 
-    public void MoveHiro(Vector3 move)
+    public void MoveHiro(int speed, int rotateSpeed)
     {
-        CharacterController.Move(move);
+        _rb.velocity = (transform.forward * Input.GetAxis("Vertical")) * speed * Time.deltaTime;
+        transform.Rotate(transform.up * Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
     }
 }

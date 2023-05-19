@@ -1,19 +1,31 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController
+public class PlayerController : IExecute
 {
    private ViewPlayer _viewPlayer;
-   private HiroModel _hiroModel;
+   private HeroModel _heroModel;
    
-   public PlayerController (ViewPlayer viewPlayer, HiroModel hiroModel)
+   public PlayerController (ViewPlayer viewPlayer, HeroModel heroModel)
    {
       _viewPlayer = viewPlayer;
-      _hiroModel = hiroModel;
+      _heroModel = heroModel;
+      // ListController.AddExecute(this);
+      // _viewPlayer?.DestroyEvt += OnDispose();
    }
 
-   public void MoveHandler(Vector3 movein)
+   public void MoveHandler()
    {
-      var move = movein * Time.deltaTime * _hiroModel.SpeedMove;
-      _viewPlayer.MoveHiro(move);
+      _viewPlayer.MoveHiro(_heroModel.SpeedMove, _heroModel.SpeedRotate);
+   }
+
+   public void Execute(float deltaTime)
+   {
+      Debug.Log("nhfv hfhfh");
+   }
+
+   private void OnDispose()
+   {
+      // ListController.RemoveExecute(this);
    }
 }
