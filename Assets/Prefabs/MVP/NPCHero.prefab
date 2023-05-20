@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 4987137139544427185}
   - component: {fileID: 3877948843360295180}
   m_Layer: 0
-  m_Name: NPCHiro
+  m_Name: NPCHero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

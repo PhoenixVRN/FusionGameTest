@@ -4,8 +4,8 @@ using UnityEngine;
 public class InitializationGame : MonoBehaviour
 {
     [SerializeField] private GameObject _playerHero;
-    [SerializeField] private GameObject _npcHero;
-    private Action<float> Execute;
+    [SerializeField] private GameObject _npcHero;  
+    public static Action<float> Execute;
 
     void Start()
     {

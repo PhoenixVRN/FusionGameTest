@@ -578,8 +578,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60382eda6ee92b947bd3bacad46afe51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerHuro: {fileID: 7426410120410928902, guid: 85abe1d1575b1f24a92dd9f12ff3198f, type: 3}
-  _npcHiro: {fileID: 6130980873844560637, guid: b11d06bf5e3639944829e37c86d816cc, type: 3}
+  _playerHero: {fileID: 7426410120410928902, guid: 85abe1d1575b1f24a92dd9f12ff3198f, type: 3}
+  _npcHero: {fileID: 6130980873844560637, guid: b11d06bf5e3639944829e37c86d816cc, type: 3}
 --- !u!1 &1470982253
 GameObject:
   m_ObjectHideFlags: 0

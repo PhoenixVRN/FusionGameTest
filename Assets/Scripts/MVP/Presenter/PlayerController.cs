@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : IExecute
@@ -16,14 +15,20 @@ public class PlayerController : IExecute
 
    public void MoveHandler()
    {
-      _viewPlayer.MoveHiro(_heroModel.SpeedMove, _heroModel.SpeedRotate);
+      MoveHiro(_heroModel.SpeedMove, _heroModel.SpeedRotate);
    }
 
    public void Execute(float deltaTime)
    {
-      Debug.Log("nhfv hfhfh");
+      MoveHandler();
    }
 
+   public void MoveHiro(int speed, int rotateSpeed)
+   {
+      _viewPlayer.Rb.velocity = (_viewPlayer.transform.forward * Input.GetAxis("Vertical")) * speed * Time.deltaTime;
+      _viewPlayer.transform.Rotate(_viewPlayer.transform.up * Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
+   }
+   
    private void OnDispose()
    {
       // ListController.RemoveExecute(this);

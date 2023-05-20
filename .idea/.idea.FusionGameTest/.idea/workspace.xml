@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3d9bac1-13d1-4445-9627-f72695c46bd9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Model/HeroModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FusionGameTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FusionGameTest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MVP/Hiro.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MVP/Hiro.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MVP/NPCHiro.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MVP/NPCHiro.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MVPTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MVPTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/InitializationGame.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/InitializationGame.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Model/HiroModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Model/HiroModel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Model/HeroModel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Interfase/IExecute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Interfase/IExecute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/NPCHiroController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/NPCHiroController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/UtilMVP.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/UtilMVP.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Util/InitializationGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Util/InitializationGame.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/View/ViewPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/View/ViewPlayer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +32,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/767dc6875cb84f4b81a18521098a47b68f800/5e/c2553bcd/NetworkRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MVP/View/ViewPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/941a4719b50f41b29409612f3478c8db1a000/89/8cb3feb8/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MVP/Interfase/IController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2PrbtWft3YaPtUNCTw7lMBV5tBD" />
@@ -96,6 +97,7 @@
       <workItem from="1684391589630" duration="3836000" />
       <workItem from="1684474947286" duration="3253000" />
       <workItem from="1684478314432" duration="8151000" />
+      <workItem from="1684582750501" duration="3261000" />
     </task>
     <servers />
   </component>

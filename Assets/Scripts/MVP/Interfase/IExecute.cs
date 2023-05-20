@@ -1,4 +1,4 @@
-public partial interface IExecute
+public interface IExecute
 {
     void Execute(float deltaTime);
 }
