@@ -1,9 +1,9 @@
 public class NPCHeroModel
 {
-    public int HP = 10;
-    public int SpeedMove = 200;
-    public int SpeedRotate = 100;
-    public int Damage = 2;
+    public int HP;
+    public int SpeedMove;
+    public int SpeedRotate;
+    public int Damage;
     public int RadiusMove;
 
     public NPCHeroModel(int hp, int speedMove,int speedRotate, int damage, int radiusMove)
@@ -13,5 +13,11 @@ public class NPCHeroModel
         SpeedRotate = speedMove;
         Damage = damage;
         RadiusMove = radiusMove;
+    }
+
+    public void ChangeHP(int hp)
+    {
+        HP -= hp;
+        
     }
 }

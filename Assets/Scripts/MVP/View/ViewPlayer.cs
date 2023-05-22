@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class ViewPlayer : MonoBehaviour
 {
     [HideInInspector] public Rigidbody Rb;
@@ -8,7 +9,7 @@ public class ViewPlayer : MonoBehaviour
     public Action<string> СollisionPlayerEvt;
     public Action DestroyEvt;
     
-    void Start()
+    void Awake()
     {
         Rb = GetComponent<Rigidbody>();
     }

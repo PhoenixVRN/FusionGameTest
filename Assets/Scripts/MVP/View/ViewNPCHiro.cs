@@ -1,16 +1,17 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class ViewNPCHiro : MonoBehaviour
 {
     public Action<string> СollisionNPCEvt;
-    public Action DestroyEvt;   
-    public Action MoveingEvt;   
-    
+    public Action DestroyEvt;
 
-    private void Start()
+    [HideInInspector] public Rigidbody Rb;
+
+    private void Awake()
     {
-        MoveingEvt?.Invoke();
+        Rb = GetComponent<Rigidbody>();
     }
 
     private void OnCollisionEnter(Collision other)

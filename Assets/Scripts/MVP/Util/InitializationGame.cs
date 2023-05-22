@@ -9,13 +9,13 @@ public class InitializationGame : MonoBehaviour
 
     void Start()
     {
-       InitPlayer();
        InitNPS();
+       InitPlayer();
     }
 
     private void InitPlayer()
     {
-        HeroModel heroModel = new HeroModel(15, 300, 300, 2);
+        HeroModel heroModel = new HeroModel(15, 200, 300, 2);
         PlayerController playerController= new PlayerController(Instantiate(_playerHero, UtilMVP.GetRandomSpawnPoint(),
             Quaternion.identity).GetComponent<ViewPlayer>(), heroModel);
         playerController.Init();
@@ -24,14 +24,14 @@ public class InitializationGame : MonoBehaviour
 
     private void InitNPS()
     {
-        NPCHeroModel npcHeroModel = new NPCHeroModel(20, 300, 300, 2, 3);
+        NPCHeroModel npcHeroModel = new NPCHeroModel(20, 3, 300, 2, 3);
         NPSHeroController npsHeroController = new NPSHeroController(Instantiate(_npcHero, UtilMVP.GetRandomSpawnPoint(), Quaternion.identity)
             .GetComponent<ViewNPCHiro>(), npcHeroModel);
         npsHeroController.Init();
         Execute += ((IExecute) npsHeroController).Execute;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Execute?.Invoke(Time.deltaTime);
     }
