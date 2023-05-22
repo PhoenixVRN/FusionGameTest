@@ -7,7 +7,7 @@ public class NPSHeroController : ControllerBasic , IExecute
    private ViewNPCHiro _viewNpcHero;
    
 
-   public NPSHeroController(NPCHeroModel npcHeroModel, ViewNPCHiro viewNpcHero)
+   public NPSHeroController(ViewNPCHiro viewNpcHero, NPCHeroModel npcHeroModel)
    {
       _npcHeroModel = npcHeroModel;
       _viewNpcHero = viewNpcHero;
@@ -15,9 +15,9 @@ public class NPSHeroController : ControllerBasic , IExecute
 
    public void Init()
    {
-      _viewNpcHero.СollisionNPCEvent += CollisionHandler;
-      _viewNpcHero.Dispose += Dispose;
-      _viewNpcHero.Moveing += MovementNPC;
+      _viewNpcHero.СollisionNPCEvt += CollisionHandler;
+      _viewNpcHero.DestroyEvt += Dispose;
+      _viewNpcHero.MoveingEvt += MovementNPC;
    }
    
    private void MovementNPC()
@@ -34,13 +34,13 @@ public class NPSHeroController : ControllerBasic , IExecute
    private void Dispose()
    {
       InitializationGame.Execute -= Execute;
-      _viewNpcHero.СollisionNPCEvent -= CollisionHandler;
-      _viewNpcHero.Dispose -= Dispose;
-      _viewNpcHero.Moveing -= MovementNPC;
+      _viewNpcHero.СollisionNPCEvt -= CollisionHandler;
+      _viewNpcHero.DestroyEvt -= Dispose;
+      _viewNpcHero.MoveingEvt -= MovementNPC;
 
    }
 
    private void CollisionHandler(string name)
-   {Debug.Log($"Столкнулись с {name}");
+   {Debug.Log($" NPC Столкнулись с {name}");
    }
 }

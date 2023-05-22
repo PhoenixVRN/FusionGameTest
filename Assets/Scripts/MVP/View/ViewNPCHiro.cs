@@ -1,27 +1,25 @@
 using System;
-using DG.Tweening;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class ViewNPCHiro : MonoBehaviour
 {
-    public Action<string> СollisionNPCEvent;
-    public Action Dispose;   
-    public Action Moveing;   
+    public Action<string> СollisionNPCEvt;
+    public Action DestroyEvt;   
+    public Action MoveingEvt;   
     
 
     private void Start()
     {
-        Moveing?.Invoke();
+        MoveingEvt?.Invoke();
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        СollisionNPCEvent?.Invoke(other.gameObject.name);
+        СollisionNPCEvt?.Invoke(other.gameObject.name);
     }
 
     private void OnDestroy()
     {
-        Dispose?.Invoke();
+        DestroyEvt?.Invoke();
     }
 }

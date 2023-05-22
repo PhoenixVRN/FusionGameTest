@@ -15,18 +15,18 @@ public class InitializationGame : MonoBehaviour
 
     private void InitPlayer()
     {
-        var playerView =Instantiate(_playerHero, UtilMVP.GetRandomSpawnPoint(), Quaternion.identity).GetComponent<ViewPlayer>();
         HeroModel heroModel = new HeroModel(15, 300, 300, 2);
-        PlayerController playerController= new PlayerController(playerView, heroModel);
+        PlayerController playerController= new PlayerController(Instantiate(_playerHero, UtilMVP.GetRandomSpawnPoint(),
+            Quaternion.identity).GetComponent<ViewPlayer>(), heroModel);
+        playerController.Init();
         Execute += ((IExecute) playerController).Execute;
     }
 
     private void InitNPS()
     {
-        var npcHero = Instantiate(_npcHero, UtilMVP.GetRandomSpawnPoint(), Quaternion.identity)
-            .GetComponent<ViewNPCHiro>();
         NPCHeroModel npcHeroModel = new NPCHeroModel(20, 300, 300, 2, 3);
-        NPSHeroController npsHeroController = new NPSHeroController(npcHeroModel, npcHero);
+        NPSHeroController npsHeroController = new NPSHeroController(Instantiate(_npcHero, UtilMVP.GetRandomSpawnPoint(), Quaternion.identity)
+            .GetComponent<ViewNPCHiro>(), npcHeroModel);
         npsHeroController.Init();
         Execute += ((IExecute) npsHeroController).Execute;
     }

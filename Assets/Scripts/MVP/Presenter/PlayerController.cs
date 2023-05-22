@@ -9,28 +9,32 @@ public class PlayerController : IExecute
    {
       _viewPlayer = viewPlayer;
       _heroModel = heroModel;
-      // ListController.AddExecute(this);
-      // _viewPlayer?.DestroyEvt += OnDispose();
    }
 
-   public void MoveHandler()
+   public void Init()
    {
-      MoveHiro(_heroModel.SpeedMove, _heroModel.SpeedRotate);
+      _viewPlayer.DestroyEvt += OnDispose;
+      _viewPlayer.СollisionPlayerEvt += CollisionPlayerHandler;
    }
 
    public void Execute(float deltaTime)
    {
-      MoveHandler();
+      MoveHiro(_heroModel.SpeedMove, _heroModel.SpeedRotate, deltaTime);
    }
 
-   public void MoveHiro(int speed, int rotateSpeed)
+   public void MoveHiro(int speed, int rotateSpeed, float deltaTime)
    {
-      _viewPlayer.Rb.velocity = (_viewPlayer.transform.forward * Input.GetAxis("Vertical")) * speed * Time.deltaTime;
-      _viewPlayer.transform.Rotate(_viewPlayer.transform.up * Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
+      _viewPlayer.Rb.velocity = _viewPlayer.transform.forward * Input.GetAxis("Vertical") * speed * deltaTime;
+      _viewPlayer.transform.Rotate(_viewPlayer.transform.up * Input.GetAxis("Horizontal") * rotateSpeed * deltaTime);
    }
-   
+
+   private void CollisionPlayerHandler(string name)
+   {
+      Debug.Log($"Player столкнулся с {name}");
+   }
    private void OnDispose()
    {
-      // ListController.RemoveExecute(this);
+      _viewPlayer.DestroyEvt -= OnDispose;
+      _viewPlayer.СollisionPlayerEvt -= CollisionPlayerHandler;
    }
 }
