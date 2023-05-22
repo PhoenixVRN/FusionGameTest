@@ -1,20 +1,27 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ViewNPCHiro : MonoBehaviour
 {
-    [HideInInspector] public NPSHeroController NpsHeroController;
-
-    [HideInInspector] public int _radiusMove;
+    public Action<string> СollisionNPCEvent;
+    public Action Dispose;   
+    public Action Moveing;   
+    
 
     private void Start()
     {
-        NpsHeroController.StartMoveNPC();
+        Moveing?.Invoke();
     }
 
-    public void MovementNPC()
+    private void OnCollisionEnter(Collision other)
     {
-        transform.DOMove(new Vector3(Random.Range(-_radiusMove, _radiusMove),
-            0.3f, Random.Range(-_radiusMove, _radiusMove)), Random.Range(1, 5)).OnComplete(MovementNPC);
+        СollisionNPCEvent?.Invoke(other.gameObject.name);
+    }
+
+    private void OnDestroy()
+    {
+        Dispose?.Invoke();
     }
 }

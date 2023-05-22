@@ -6,16 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a3d9bac1-13d1-4445-9627-f72695c46bd9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FusionGameTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FusionGameTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MVP/Hiro.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MVP/Hiro.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MVP/NPCHiro.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MVP/NPCHiro.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MVPTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MVPTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Interfase/IExecute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Interfase/IExecute.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/NPCHiroController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/NPCHiroController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Util/InitializationGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Util/InitializationGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/View/ViewPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/View/ViewPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/View/ViewNPCHiro.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/View/ViewNPCHiro.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +91,8 @@
       <workItem from="1684474947286" duration="3253000" />
       <workItem from="1684478314432" duration="8151000" />
       <workItem from="1684582750501" duration="3261000" />
+      <workItem from="1684731219336" duration="2000" />
+      <workItem from="1684731371287" duration="4082000" />
     </task>
     <servers />
   </component>

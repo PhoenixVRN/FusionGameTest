@@ -27,6 +27,7 @@ public class InitializationGame : MonoBehaviour
             .GetComponent<ViewNPCHiro>();
         NPCHeroModel npcHeroModel = new NPCHeroModel(20, 300, 300, 2, 3);
         NPSHeroController npsHeroController = new NPSHeroController(npcHeroModel, npcHero);
+        npsHeroController.Init();
         Execute += ((IExecute) npsHeroController).Execute;
     }
 
