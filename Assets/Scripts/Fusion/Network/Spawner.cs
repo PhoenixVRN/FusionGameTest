@@ -27,7 +27,6 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
             runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
             runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
             runner.Spawn(Ball, Utils.GetRandomSpaenPoint(),Quaternion.identity);
-            
         }
     }
 

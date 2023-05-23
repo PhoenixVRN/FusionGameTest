@@ -1,6 +1,4 @@
-using DG.Tweening;
 using UnityEngine;
-
 
 public class NPSHeroController : ControllerBasic , IExecute
 {
@@ -20,7 +18,7 @@ public class NPSHeroController : ControllerBasic , IExecute
    public void Init()
    {
       _viewNpcHero.СollisionNPCEvt += CollisionHandler;
-      _viewNpcHero.DestroyEvt += Dispose;
+      _npcHeroModel.KillUnit += Dispose;
       _target = Target();
 
    }
@@ -33,30 +31,44 @@ public class NPSHeroController : ControllerBasic , IExecute
 
    private void MovementNPC(float deltaTime)
    {
-      _viewNpcHero.Rb.MovePosition(_viewNpcHero.transform.position + _direction * deltaTime * _npcHeroModel.SpeedMove);
+      if (Vector3.Distance(_viewNpcHero.transform.position, _target) < 1f)
+      {
+         _target = Target();
+         _viewNpcHero.transform.LookAt(_target);
+      }
+      else
+      {
+         _direction = (_target - _viewNpcHero.transform.position).normalized;
+         _viewNpcHero.Rb.MovePosition(_viewNpcHero.transform.position + _direction * deltaTime * _npcHeroModel.SpeedMove);
+      }
+   }
+
+   private void ChecHP()
+   {
+      if (_npcHeroModel.HP < 1)
+      {
+         _viewNpcHero.KillUnit();
+      }
    }
 
    public  void Execute(float deltaTime)
    {
-      if (Vector3.Distance(_viewNpcHero.transform.position, _target) < 1f)
-      {
-         _target = Target();
-      }
-      else
-      {
-          _direction = (_target - _viewNpcHero.transform.position).normalized;
-          MovementNPC(deltaTime);
-      }
+      MovementNPC(deltaTime);
+      ChecHP();
    }
 
    private void Dispose()
    {
       InitializationGame.Execute -= Execute;
       _viewNpcHero.СollisionNPCEvt -= CollisionHandler;
-      _viewNpcHero.DestroyEvt -= Dispose;
    }
 
    private void CollisionHandler(string name)
-   {Debug.Log($" NPC Столкнулись с {name}");
+   {
+      if (name == "Hero")
+      {
+         _npcHeroModel.ChangeHP(5);
+         Debug.Log($"Осталось ХП {_npcHeroModel.HP}");
+      }
    }
 }

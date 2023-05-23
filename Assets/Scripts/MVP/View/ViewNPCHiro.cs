@@ -5,7 +5,6 @@ using UnityEngine;
 public class ViewNPCHiro : MonoBehaviour
 {
     public Action<string> СollisionNPCEvt;
-    public Action DestroyEvt;
 
     [HideInInspector] public Rigidbody Rb;
 
@@ -19,8 +18,8 @@ public class ViewNPCHiro : MonoBehaviour
         СollisionNPCEvt?.Invoke(other.gameObject.name);
     }
 
-    private void OnDestroy()
+    public void KillUnit()
     {
-        DestroyEvt?.Invoke();
+        Destroy(gameObject);
     }
 }

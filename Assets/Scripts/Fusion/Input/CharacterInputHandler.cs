@@ -10,10 +10,13 @@ public class CharacterInputHandler : MonoBehaviour
     private bool _isJumpButtonPressed;
 
     private LocalCameraHandler _localCameraHandler;
+    
+    NetworkInputData networkInputData;
 
     private void Awake()
     {
         _localCameraHandler = GetComponentInChildren<LocalCameraHandler>();
+        networkInputData = new NetworkInputData();
     }
 
     void Update()
@@ -34,7 +37,7 @@ public class CharacterInputHandler : MonoBehaviour
 
     public NetworkInputData GetNetworkInput()
     {
-        NetworkInputData networkInputData = new NetworkInputData();
+        // NetworkInputData networkInputData = new NetworkInputData();
 
         networkInputData.IsJumpPressed = _isJumpButtonPressed;
 

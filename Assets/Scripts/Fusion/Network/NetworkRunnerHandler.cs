@@ -22,6 +22,7 @@ public class NetworkRunnerHandler : MonoBehaviour
     protected virtual Task InitalizeNetworkRunner(NetworkRunner runner, GameMode gameMode, NetAddress address,
         SceneRef scene, Action<NetworkRunner> initialized)
     {
+        // var sceneManager = runner.GetComponents(typeof(MonoBehaviour)).OfType<INetworkSceneManager>().FirstOrDefault();
         var sceneObjetProvider = runner.GetComponents(typeof(MonoBehaviour)).OfType<NetworkSceneManagerDefault>().FirstOrDefault();
         if (sceneObjetProvider == null)
         {
