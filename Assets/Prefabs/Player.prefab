@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b095414bb4cbbd043994a151321d84f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraAnchorPoint: {fileID: 7185938989632966659}
+  CameraAnchorPoint: {fileID: 0}
 --- !u!81 &7035106264013583718
 AudioListener:
   m_ObjectHideFlags: 0
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  playerModel: {fileID: 6407690256934264082}
+  PlayerModel: {fileID: 0}
 --- !u!114 &2049081567090858253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,13 +651,13 @@ MonoBehaviour:
     RotTeleportRadians: 1.5
   UseLegacySharedModeInterpolation: 0
   TargetInterpolationDelay: 0.03
-  gravity: -20
-  jumpImpulse: 4
-  acceleration: 10
-  braking: 5
-  maxSpeed: 1
-  rotationSpeed: 300
-  viewUpDownRotationSpeed: 120
+  Gravity: -20
+  JumpImpulse: 8
+  Acceleration: 30
+  Braking: 10
+  MaxSpeed: 2
+  RotationSpeed: 30
+  ViewUpDownRotationSpeed: 50
   _IsGrounded: 0
   _Velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &1590170349936389912

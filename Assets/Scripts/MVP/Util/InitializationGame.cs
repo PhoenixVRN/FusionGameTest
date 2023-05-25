@@ -3,18 +3,19 @@ using UnityEngine;
 
 public class InitializationGame : MonoBehaviour
 {
-    public static Action<float> Execute;
-
     void Start()
     {
         new NPCBuilder();
         new PlayerBuilder();
     }
 
-   
-    
-    private void FixedUpdate()
+    private void SpawnNpc()
     {
-        Execute?.Invoke(Time.deltaTime);
+        new NPCBuilder();
+    }
+    
+    private void Update()
+    {
+        ListController.UpDate(Time.deltaTime);
     }
 }

@@ -402,8 +402,8 @@ GameObject:
   - component: {fileID: 7426410120410928897}
   - component: {fileID: 7426410120410928896}
   - component: {fileID: 7426410120410928903}
-  - component: {fileID: 7426410120410928956}
   - component: {fileID: -635103232989229238}
+  - component: {fileID: 6777972507493594174}
   - component: {fileID: 8306699000441472737}
   m_Layer: 0
   m_Name: Hero
@@ -494,19 +494,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7426410120410928956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7426410120410928902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe5a7007ef64a664aaea8be065c04cd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rb: {fileID: 0}
 --- !u!54 &-635103232989229238
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -523,6 +510,19 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &6777972507493594174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7426410120410928902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5a7007ef64a664aaea8be065c04cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rb: {fileID: 0}
 --- !u!114 &8306699000441472737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,9 +536,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataUnitCfg:
-    _powerMove: 5
-    _powerRotate: 10
-    _maxLive: 2
+    _hp: 10
+    _speedMove: 300
+    _speedRotate: 50
+    _damage: 2
 --- !u!1 &7989745370070716806
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,20 +2,19 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class ViewNPCHiro : MonoBehaviour
+public class ViewHero : MonoBehaviour
 {
-    public Action<string> СollisionNPCEvt;
-
     [HideInInspector] public Rigidbody Rb;
+    
+    public Action<GameObject> СollisionEvt;
 
-    private void Awake()
+    void Awake()
     {
         Rb = GetComponent<Rigidbody>();
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        СollisionNPCEvt?.Invoke(other.gameObject.name);
+        СollisionEvt?.Invoke(other.gameObject);
     }
-    
 }
