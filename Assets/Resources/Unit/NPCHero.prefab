@@ -441,7 +441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dataUnitCfg:
     _hp: 10
-    _speedMove: 3
+    _speedMove: 200
     _speedRotate: 3
     _damage: 2
 --- !u!1 &6700002894582551677

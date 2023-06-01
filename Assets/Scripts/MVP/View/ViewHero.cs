@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ViewHero : MonoBehaviour
 {
+    public Transform SpawnBullet;
     [HideInInspector] public Rigidbody Rb;
     
     public Action<GameObject> СollisionEvt;

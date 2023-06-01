@@ -5,8 +5,7 @@ public class MovementAIController : IExecute, IDisposable
 {
     private ViewHero _viewHero;
     private HeroModel _modelHero;
-
-    private Vector3 _target;
+    
     public MovementAIController (ViewHero viewHero, HeroModel modelHero)
     {
         _viewHero = viewHero;
@@ -14,14 +13,9 @@ public class MovementAIController : IExecute, IDisposable
     }
     public void Execute(float deltaTime)
     {
-        if (_target != _modelHero.Target)
-        {
-            _viewHero.transform.LookAt(_modelHero.Target);
-            _target = _modelHero.Target;
-        }
-        _viewHero.Rb.MovePosition(_modelHero.Move);
+        _viewHero.Rb.velocity = _modelHero.Move;
+        _viewHero.transform.Rotate(_modelHero.Rotate);
     }
-
     public void Dispose()
     {
     }

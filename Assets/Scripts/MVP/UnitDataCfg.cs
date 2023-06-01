@@ -14,5 +14,6 @@ public sealed class UnitDataCfg
 
     public int Damage => _damage;
     [Header("Damage")] [SerializeField] private int _damage = 2;
+    
 }
     

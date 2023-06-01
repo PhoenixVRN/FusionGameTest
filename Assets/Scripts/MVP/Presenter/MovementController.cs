@@ -1,14 +1,14 @@
 using System;
 
-public class MovementController: IExecute, IDisposable
+public class MovementController: BaseController, IExecute, IDisposable
 {
     private ViewHero _viewHero;
-    private HeroModel _heroModel;
+    private HeroModel _modelHero;
 
-    public MovementController(ViewHero viewHero, HeroModel heroModel)
+    public MovementController(ViewHero viewHero, HeroModel modelHero)
     {
         _viewHero = viewHero;
-        _heroModel = heroModel;
+        _modelHero = modelHero;
     }
 
     public void Execute(float deltaTime)
@@ -18,8 +18,8 @@ public class MovementController: IExecute, IDisposable
 
     public void MoveHiro()
     {
-        _viewHero.Rb.velocity = _heroModel.Move;
-        _viewHero.transform.Rotate(_heroModel.Rotate);
+        _viewHero.Rb.velocity = _modelHero.Move;
+        _viewHero.transform.Rotate(_modelHero.Rotate);
     }
     
     public void Dispose()

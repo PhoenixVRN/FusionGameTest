@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
     public NetworkPlayer PlayerPrefab;
     public PhysxBall Ball;
     private CharacterInputHandler _characterInputHandler;
-
+    private NetworkInput _networkInput;
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
         Debug.Log("OnPlayerJoine");
@@ -37,6 +37,7 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
+            _networkInput = input;
         if (_characterInputHandler == null && NetworkPlayer.Local != null)
         {
             _characterInputHandler = NetworkPlayer.Local.GetComponent<CharacterInputHandler>();
@@ -46,9 +47,12 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
         {
             input.Set(_characterInputHandler.GetNetworkInput());
         }
-        
     }
 
+    public void JumpPress()
+    {
+        _networkInput.Set(_characterInputHandler.GetNetworkInput());
+    }
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)
     { 
         Debug.Log("OnInputMissing");

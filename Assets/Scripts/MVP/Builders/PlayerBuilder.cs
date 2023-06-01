@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
 
-public class PlayerBuilder
+public class PlayerBuilder:BaseController
 {
     private MovementController _movementController;
     private InputController _inputController;
     private CollisionController _collisionController;
+    private ShootingController _shootingController;
     
     private HeroModel _model;
 
@@ -26,8 +27,10 @@ public class PlayerBuilder
         _movementController = new MovementController(heroObj.GetComponent<ViewHero>(), _model);
         _inputController = new InputController(heroObj.GetComponent<ViewHero>(), _model);
         _collisionController = new CollisionController(heroObj.GetComponent<ViewHero>(), _model);
+        _shootingController = new ShootingController(heroObj.GetComponent<ViewHero>(), _model);
 
         ListController.ExecuteEvt += ((IExecute) _movementController).Execute;
+        ListController.ExecuteEvt += ((IExecute) _shootingController).Execute;
         ListController.ExecuteEvt += ((IExecute) _inputController).Execute;
         _model.KillUnitEvt += DestroyHero;
     }
@@ -35,6 +38,7 @@ public class PlayerBuilder
     private void DestroyHero()
     {
         ListController.ExecuteEvt -= ((IExecute) _movementController).Execute;
+        ListController.ExecuteEvt -= ((IExecute) _shootingController).Execute;
         ListController.ExecuteEvt -= ((IExecute) _inputController).Execute;
         _model.KillUnitEvt -= DestroyHero;
         

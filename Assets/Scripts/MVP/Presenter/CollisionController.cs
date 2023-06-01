@@ -10,15 +10,16 @@ public class CollisionController : IDisposable
     {
         _viewHero = viewHero;
         _heroModel = heroModel;
-        _viewHero.СollisionEvt += CollisionPlayerHandler;
+        _viewHero.СollisionEvt += obj => CollisionHeroHandler(obj);
     }
 
-    private void CollisionPlayerHandler(GameObject obj)
+    private void CollisionHeroHandler(GameObject obj)
     {
+        _heroModel.СollisionModelEvt?.Invoke();
         Debug.Log($"Hero столкнулся с {obj}");
     }
     public void Dispose()
     {
-        _viewHero.СollisionEvt -= CollisionPlayerHandler; 
+        _viewHero.СollisionEvt -= obj => CollisionHeroHandler(obj); 
     }
 }

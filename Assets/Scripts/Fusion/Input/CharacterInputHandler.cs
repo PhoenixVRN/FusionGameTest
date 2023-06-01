@@ -48,4 +48,5 @@ public class CharacterInputHandler : MonoBehaviour
         _isJumpButtonPressed = false;
         return networkInputData;
     }
+    
 }
