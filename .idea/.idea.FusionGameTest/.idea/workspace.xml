@@ -6,22 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a3d9bac1-13d1-4445-9627-f72695c46bd9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FusionGameTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FusionGameTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Unit/Hero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Unit/Hero.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Unit/NPCHero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Unit/NPCHero.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MVPTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MVPTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fusion/Input/CharacterInputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fusion/Input/CharacterInputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fusion/Network/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fusion/Network/Spawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Builders/PlayerBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Builders/PlayerBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Interfase/IController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Interfase/IController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Model/HeroModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Model/HeroModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/AIInputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/AIInputController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/CollisionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/CollisionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/MovementAIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/MovementAIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/MovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/MovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/UnitDataCfg.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/UnitDataCfg.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/Util/UtilMVP.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/Util/UtilMVP.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MVP/View/ViewHero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MVP/View/ViewHero.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fusion/Network/NetworkPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fusion/Network/NetworkPlayer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +29,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/TagFolderActiveElements.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MVP/View/ViewHero.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MVP/UnitDataCfg.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ChangeColor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MVP/BaseController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MVP/Presenter/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/20/8e1f42ec/IDisposable.cs" root0="SKIP_HIGHLIGHTING" />
@@ -134,6 +122,7 @@
       <workItem from="1685337091692" duration="12608000" />
       <workItem from="1685366197314" duration="1773000" />
       <workItem from="1685519556841" duration="2685000" />
+      <workItem from="1685679837120" duration="3891000" />
     </task>
     <servers />
   </component>

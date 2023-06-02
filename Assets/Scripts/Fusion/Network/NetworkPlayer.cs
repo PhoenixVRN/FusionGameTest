@@ -1,10 +1,11 @@
 using Fusion;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
 {
     public static NetworkPlayer Local;
-    public Transform PlayerModel;
+    public  Transform PlayerModel;
 
     public override void Spawned()
     {
@@ -33,5 +34,10 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
         {
             Runner.Despawn(Object);
         }
+    }
+    [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
+    public void RPC_Change(Color color)
+    {
+        PlayerModel.gameObject.GetComponent<Renderer>().material.color = color;
     }
 }

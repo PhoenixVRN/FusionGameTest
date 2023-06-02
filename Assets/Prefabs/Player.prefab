@@ -595,7 +595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  PlayerModel: {fileID: 0}
+  PlayerModel: {fileID: 6407690256934264082}
+  Materials: []
 --- !u!114 &2049081567090858253
 MonoBehaviour:
   m_ObjectHideFlags: 0
